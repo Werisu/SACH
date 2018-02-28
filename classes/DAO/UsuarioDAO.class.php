@@ -16,7 +16,7 @@ class UsuarioDAO {
     
     public function login($senha, $login) {
         
-        $sql = "SELECT * FROM usuario WHERE loginUsuario ='$login' AND senhaUsuario = '$senha'";
+        $sql = "SELECT * FROM `usuario`, `senha` WHERE usuario.us_nome = '$login' AND senha.us_senha = '$senha'";
         
         $executa = mysqli_query($this->conexao->getCon(), $sql);
         
